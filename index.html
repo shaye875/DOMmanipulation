@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sequle1{
+            border: solid;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sequle1 p{
+            font-size: 3rem;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <label for="squares">Create squares:</label><br>
+    <input type="number" id="squares">
+    <button id="create">Create squares</button>
+    <div id="div"></div>
+</body>
+<script>
+    const numberSquares = document.getElementById("squares")
+    const div = document.getElementById("div")
+    const create = document.getElementById("create")
+    create.addEventListener("click",()=>{
+        div.innerHTML = ""
+        console.log(numberSquares.value);
+     
+        for(let i = 1;i <= numberSquares.value;i++){
+            let num = document.createElement("p")
+            let node = document.createTextNode(String(i))
+            num.appendChild(node)
+            let sequle = document.createElement("div")
+            sequle.appendChild(num)
+            sequle.classList.add("sequle1")
+            div.appendChild(sequle)
+        }
+    })
+</script>
+</html>
